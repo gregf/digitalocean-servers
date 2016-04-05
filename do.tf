@@ -29,68 +29,61 @@ provisioner "remote-exec" {
 }
 
 resource "digitalocean_droplet" "monitoring" {
-    image = "debian-8-3-x64"
-    name = "mon.gregf.org"
-    region = "nyc3"
-    size = "1gb"
-		ipv6 = true
-		private_networking = true
-		user_data "#!/bin/bash\n apt-get update -y\n apt-get upgrade -y\n apt-get install sudo"
-    ssh_keys = [
-      "${var.ssh_fingerprint}"
-    ]
+  image = "debian-8-3-x64"
+  name = "mon.gregf.org"
+  region = "nyc3"
+  size = "1gb"
+  ipv6 = true
+  private_networking = true
+  ssh_keys = [
+    "${var.ssh_fingerprint}"
+  ]
 }
 
 resource "digitalocean_droplet" "web" {
-    image = "debian-8-3-x64"
-    name = "www.gregf.org"
-    region = "nyc3"
-    size = "1gb"
-		ipv6 = true
-		private_networking = true
-		user_data "#!/bin/bash\n apt-get update -y\n apt-get upgrade -y\n apt-get install sudo"
-    ssh_keys = [
-      "${var.ssh_fingerprint}"
-    ]
-
+  image = "debian-8-3-x64"
+  name = "www.gregf.org"
+  region = "nyc3"
+  size = "1gb"
+  ipv6 = true
+  private_networking = true
+  ssh_keys = [
+    "${var.ssh_fingerprint}"
+  ]
 }
 
 resource "digitalocean_droplet" "db" {
-    image = "debian-8-3-x64"
-    name = "db.gregf.org"
-    region = "nyc3"
-    size = "512mb"
-		ipv6 = false
-		private_networking = true
-		user_data "#!/bin/bash\n apt-get update -y\n apt-get upgrade -y\n apt-get install sudo"
-    ssh_keys = [
-      "${var.ssh_fingerprint}"
-    ]
-
+  image = "debian-8-3-x64"
+  name = "db.gregf.org"
+  region = "nyc3"
+  size = "512mb"
+  ipv6 = false
+  private_networking = true
+  ssh_keys = [
+    "${var.ssh_fingerprint}"
+  ]
 }
 
 resource "digitalocean_droplet" "xmpp" {
-    image = "debian-8-3-x64"
-    name = "xmpp.gregf.org"
-    region = "nyc3"
-    size = "512mb"
-		ipv6 = false
-		private_networking = true
-		user_data "#!/bin/bash\n apt-get update -y\n apt-get upgrade -y\n apt-get install sudo"
-    ssh_keys = [
-      "${var.ssh_fingerprint}"
-    ]
+  image = "debian-8-3-x64"
+  name = "xmpp.gregf.org"
+  region = "nyc3"
+  size = "512mb"
+  ipv6 = false
+  private_networking = true
+  ssh_keys = [
+    "${var.ssh_fingerprint}"
+  ]
 }
 
 resource "digitalocean_droplet" "7dtd" {
-    image = "debian-8-3-x64"
-    name = "7dtd.gregf.org"
-    region = "nyc3"
-    size = "2gb"
-		ipv6 = true
-		private_networking = true
-		user_data "#!/bin/bash\n apt-get update -y\n apt-get upgrade -y\n apt-get install sudo"
-    ssh_keys = [
-      "${var.ssh_fingerprint}"
-    ]
+  image = "debian-8-3-x64"
+  name = "7dtd.gregf.org"
+  region = "nyc3"
+  size = "2gb"
+  ipv6 = true
+  private_networking = true
+  ssh_keys = [
+    "${var.ssh_fingerprint}"
+  ]
 }

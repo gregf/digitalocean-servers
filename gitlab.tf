@@ -1,6 +1,6 @@
-resource "digitalocean_droplet" "monitoring" {
-  image = "debian-8-3-x64"
-  name = "mon.gregf.org"
+resource "digitalocean_droplet" "gitlab" {
+  image = "16403786"
+  name = "gitlab.gregf.org"
   region = "nyc3"
   size = "1gb"
   ipv6 = true
